@@ -8,7 +8,7 @@ from sklearn.svm import SVR
 from bin.Classifier import NBPW
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-import bin.Preprocess as Preprocess、
+import bin.Preprocess as Preprocess
 
 from sklearn import metrics
 from sklearn.metrics import f1_score, cohen_kappa_score
