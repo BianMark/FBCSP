@@ -78,7 +78,7 @@ class Classifier:
 class FeatureSelect:
     def __init__(self, n_features_select=4, n_csp_pairs=2):
         self.n_features_select = n_features_select  # 'n_features_select' is the number of CSP features in each selected pair of CSP features (normally between 2-4)
-        self.n_csp_pairs = n_csp_pairs  # 'n_csp_pairs' is the number of selected pairs of CSP features (normally between 10-20)
+        self.n_csp_pairs = n_csp_pairs  # 'n_csp_pairs' is the number of selected pairs of CSP features
         self.features_selected_indices = []
 
     def fit(self, x_train_features, y_train):

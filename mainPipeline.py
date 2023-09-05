@@ -15,7 +15,7 @@ if __name__ == "__main__":
     dataset_details = {
         'data_path': "E:\\EEG\\DataSets\\BCI Competition IV\\BCICIV_2a_gdf",
         'file_to_load': 'A01T.gdf',
-        'ntimes': 1,
+        'ntimes': 10,
         'kfold': 10,
         'm_filters': 2,
         'window_details': {'tmin': 1, 'tmax': 4}

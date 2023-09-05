@@ -17,7 +17,7 @@ class FBCSP:
         y_classes_unique = np.unique(y_train)
         n_classes = len(y_classes_unique)
         self.csp = CSP(self.m_filters)
-
+ 
         def get_csp(x_train_fb, y_train_cls):
             """
             Get many filter banks, each filter bank contains the CSP eigenvalues and CSP eigenvectors with respect to 'y_train_cls' in a specific frequency sub-band.

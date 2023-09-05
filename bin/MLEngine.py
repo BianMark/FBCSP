@@ -8,7 +8,11 @@ from sklearn.svm import SVR
 from bin.Classifier import NBPW
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
-import bin.Preprocess as Preprocess
+import bin.Preprocess as Preprocess、
+
+from sklearn import metrics
+from sklearn.metrics import f1_score, cohen_kappa_score
+import seaborn as sns
 
 
 class MLEngine:
@@ -42,6 +46,10 @@ class MLEngine:
 
         training_accuracy = []
         testing_accuracy = []
+        training_kappa = []
+        testing_kappa = []
+        training_f1 = []
+        testing_f1 = []
 
         if experiment_details['classifier']['classifier_type'] == 'SVR':
             classifier_type = SVR(gamma=experiment_details['classifier']['gamma'])
@@ -98,6 +106,12 @@ class MLEngine:
 
                 tr_acc = np.sum(y_train_predicted_multi == y_train, dtype=np.float) / len(y_train)
                 te_acc = np.sum(y_test_predicted_multi == y_test, dtype=np.float) / len(y_test)
+
+                kappa_train = cohen_kappa_score(y_train, y_train_predicted_multi)
+                f1_train = f1_score(y_train, y_train_predicted_multi, average='macro')
+                
+                kappa_test = cohen_kappa_score(y_test, y_test_predicted_multi)
+                f1_test = f1_score(y_test, y_test_predicted_multi, average='macro')
 
                 print(f'Training Accuracy = {str(tr_acc)}\n')
                 print(f'Testing Accuracy = {str(te_acc)}\n \n')
