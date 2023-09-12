@@ -23,7 +23,7 @@ class CSP:
             x_trial = x_data[i, :, :]
             y_trial = y_labels[i]
             cov_x_trial = np.matmul(x_trial, np.transpose(x_trial))  # compute the covariance matrix (n_channels x n_channels) for the trial
-            cov_x_trial /= np.trace(cov_x_trial)  # divide each element of cov_x_trial by the trace of 'cov_x_trial' to normalize the covariance matrix
+            cov_x_trial /= np.trace(cov_x_trial)  # divide each element of cov_x_trial by the trace of 'cov_x_trial' to Standardization the covariance matrix
             cov_x[y_trial, :, :] += cov_x_trial  # compute the total covariance for two classes
 
         cov_x = np.asarray([cov_x[cls]/np.sum(y_labels == cls) for cls in range(2)])  # compute the mean covariance matrix for two classes
