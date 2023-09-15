@@ -109,7 +109,7 @@ class MLEngine:
 
                 kappa_train = cohen_kappa_score(y_train, y_train_predicted_multi)
                 f1_train = f1_score(y_train, y_train_predicted_multi, average='macro')
-                
+
                 kappa_test = cohen_kappa_score(y_test, y_test_predicted_multi)
                 f1_test = f1_score(y_test, y_test_predicted_multi, average='macro')
 
